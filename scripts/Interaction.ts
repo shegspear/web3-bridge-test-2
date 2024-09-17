@@ -34,7 +34,7 @@ async function main() {
     console.log("USDT balance before ", usdtBal);
     console.log("ETH balance before ", ethBal);
 
-    await ROUTER.addLiquidityETH(
+    const res = await ROUTER.addLiquidityETH(
         USDT,
         designerAmountA,
         minAmountA,
@@ -44,6 +44,8 @@ async function main() {
         { value: ETHDesired }
     )
 
+    // console.log('add liquidity res ', res)
+
     console.log("========================================")
 
     const usdtBalAfter = await USDT_Contract.balanceOf(impersonateSigner.address);
@@ -51,6 +53,34 @@ async function main() {
 
     console.log("USDT balance after ", usdtBalAfter);
     console.log("ETH balance after ", ethBalAfter);
+
+
+    console.log("--- WETH ---")
+
+    const tes = await ROUTER.WETH()
+
+    console.log('add liquidity res ', tes)
+
+    // console.log("USDT balance before ", usdtBalAfter);
+    // console.log("ETH balance before ", ethBalAfter);
+
+    // await ROUTER.removeLiquidityETH(
+    //     USDT,
+    //     3,
+    //     minAmountA,
+    //     amountEthMin,
+    //     TOKEN_HOLDER,
+    //     deadLine,
+        
+    // )
+
+    // console.log("========================================")
+
+    // const usdtBalAfter2 = await USDT_Contract.balanceOf(impersonateSigner.address);
+    // const ethBalAfter2 = await ethers.provider.getBalance(impersonateSigner.address);
+
+    // console.log("USDT balance after ", usdtBalAfter2);
+    // console.log("ETH balance after ", ethBalAfter2);
 }
 
 main().catch((error) => {

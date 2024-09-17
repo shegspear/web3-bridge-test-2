@@ -19,4 +19,6 @@ interface IUniswapV2Router {
         address to,
         uint deadline
     ) external returns (uint amountToken, uint amountETH);
+
+    function WETH() external pure returns (address);
 }
