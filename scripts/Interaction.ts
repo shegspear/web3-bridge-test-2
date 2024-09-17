@@ -59,7 +59,7 @@ async function main() {
 
     const tes = await ROUTER.WETH()
 
-    console.log('add liquidity res ', tes)
+    console.log('WETH function call res ', tes)
 
     // console.log("USDT balance before ", usdtBalAfter);
     // console.log("ETH balance before ", ethBalAfter);
