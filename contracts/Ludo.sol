@@ -7,6 +7,9 @@ contract Ludo {
     uint8 public steps;
     uint256 public dice;
 
+    event YouWin();
+    event SorryYouLoose();
+
     constructor() {
        owner = msg.sender; 
     }
