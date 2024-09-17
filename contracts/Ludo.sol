@@ -18,6 +18,10 @@ contract Ludo {
         uint256 randomHash = uint256(
             keccak256(abi.encodePacked(block.timestamp, block.prevrandao, msg.sender))
         );
+
+        if(dice == 6 && (randomHash % 6) + 1 == 6) {
+            emit YouWin();
+        }
         
         dice = (randomHash % 6) + 1;
     }
